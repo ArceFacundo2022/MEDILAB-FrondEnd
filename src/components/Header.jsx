@@ -1,5 +1,9 @@
+<<<<<<< HEAD:src/components/layout/Header.jsx
 import ModalInicioSesion from "../ModalInicioSesion"
 import ModalRegistro from "../ModalRegistro"
+=======
+import ModalRegistro from "../components/ModalRegistro"
+>>>>>>> 63d0da337d466e06048eb5ee9055f9c54625828d:src/components/Header.jsx
 
 const Header = ()=>{
     return(

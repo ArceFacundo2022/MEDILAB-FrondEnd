@@ -4,9 +4,9 @@ import { useContext } from "react";
 
 export const PublicRoutes = ({children}) => {
 
-  const { infoContextUser } = useContext(AuthContext)
+  const { logged } = useContext(AuthContext)
   
-  return infoContextUser.isLogged
+  return logged.isLogged
           ? <Navigate to='/Home' />
           : children
 }

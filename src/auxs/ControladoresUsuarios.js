@@ -1,28 +1,26 @@
-export const ctrlUser = {
-    postLogin : async (url, DNI, contraseña) =>{
 
-        console.log(url)
-        console.log(DNI)
-        console.log(contraseña)
+export const ctrlUser = {
+
+
+    postLogin : async (url, inicio) =>{
 
         const json = await fetch(url, {
             headers: {
                 'Content-Type': 'application/json',
         },
             method: 'POST',
-            body: JSON.stringify({
-            "nombreyape" : DNI,
-            "password" : contraseña
-        })
+            body: JSON.stringify(inicio)
         })
 
         if (!json.ok){
             return alert('Error al hacer la peticion');
         }
 
+
         const data = await json.json()
         console.log(data.token)
         localStorage.setItem("Token", data.token)
+        return "correcto"
     },
 
     postUser : async (url, rawUser) =>{

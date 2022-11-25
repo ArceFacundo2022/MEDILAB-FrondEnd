@@ -4,10 +4,10 @@ import { AuthContext } from "../context/AuthContext";
 
 export const PrivateRoutes = ({ children }) => {
   // Colocar el context creado en el archivo 'AuthContext.jsx'
-  const { infoContextUser } = useContext(AuthContext);
+  const { logged } = useContext(AuthContext);
 
   
-  return infoContextUser.isLogged
+  return logged.isLogged
           ? children
           : <Navigate to='/' />
 }
