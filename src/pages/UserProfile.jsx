@@ -1,6 +1,6 @@
-import "../src/assets/css/userProfile.css"
-import "../src/assets/css/style.css"
-import UserHeader from "../src/components/UserHeader"
+import "../assets/css/userProfile.css"
+import "../assets/css/style.css"
+import UserHeader from "../components/UserHeader"
 const UserProfile = () => {
     return (
         <>

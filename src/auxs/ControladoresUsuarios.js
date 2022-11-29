@@ -20,7 +20,7 @@ export const ctrlUser = {
         const data = await json.json()
         console.log(data.token)
         localStorage.setItem("Token", data.token)
-        return "correcto"
+        return true
     },
 
     postUser : async (url, rawUser) =>{
@@ -38,6 +38,8 @@ export const ctrlUser = {
         }
 
         const data = await json.json()
-        return console.log(data)
+        console.log(data)
+        const correcto = "correcto"
+        return correcto
     }
 }

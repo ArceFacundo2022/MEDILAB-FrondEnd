@@ -8,32 +8,28 @@ function ModalRegistro() {
 
     const ctrlForm = {
         campoUser : ()=>{
-            console.log("user")
             setHiddenMedic(true);
             setHiddenAdmin(true);
-            setNewUser({...newUser,"role":"user"})
-            setMatricula("");
-            setCodAdmin(""); 
-            document.getElementById('MatriLabel').value = ""; 
-            document.getElementById('CodLabel').value = ""
+            setNewUser({...newUser, "role" :"user", "codeAdmin":"", "enrollment":""});
+            document.getElementById('CodLabel').value = "";
+            document.getElementById('MatriLabel').value = "";
+            console.log(newUser);
         },
     
         campoMedic : () => {
             setHiddenMedic(false);
-            setHiddenAdmin(true)
-            console.log("medic")
-            setNewUser({...newUser,"role":"medic"})
-            setCodAdmin(""); 
-            document.getElementById('CodLabel').value = ""
+            setHiddenAdmin(true);
+            setNewUser({...newUser, "role":"medic", "codeAdmin":""});
+            document.getElementById('CodLabel').value = "";
+            console.log(newUser);
         },
     
         campoAdmin : () => {
             setHiddenAdmin(false);
-            setHiddenMedic(true)
-            setNewUser({...newUser,"role":"user"}) 
-            setMatricula(""); 
-            document.getElementById('MatriLabel').value = ""
-            console.log("admin")
+            setHiddenMedic(true);
+            setNewUser({...newUser, "role":"admin", "enrollment":""});
+            document.getElementById('MatriLabel').value = "";
+            console.log(newUser);
         }
     } 
     const [show, setShow] = useState(false);
@@ -71,8 +67,8 @@ return (
     </a>
 
     <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-        <Modal.Title>Formulario de Registro</Modal.Title>
+        <Modal.Header style={{"background-color" : "rgb(77, 127, 221)"}} closeButton>
+        <Modal.Title style={{"color" : "white"}}>Formulario de Registro</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <form action="">

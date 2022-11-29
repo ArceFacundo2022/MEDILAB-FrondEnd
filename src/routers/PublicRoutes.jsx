@@ -4,9 +4,10 @@ import { useContext } from "react";
 
 export const PublicRoutes = ({children}) => {
 
-  const { logged } = useContext(AuthContext)
+  const logged2 = localStorage.getItem("Token") || false;
+  //const { logged } = useContext(AuthContext)
   
-  return logged.isLogged
+  return logged2
           ? <Navigate to='/Home' />
           : children
 }
