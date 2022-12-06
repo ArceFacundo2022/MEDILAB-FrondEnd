@@ -4,23 +4,16 @@ import { AppRouter } from './routers/AppRouters';
 import { authReducer } from './reducers/authReducers';
 
 function App() {
-  const infoContextUser = {
-    isLogged : false,
-    userName : "PepeGuapo"
-  }
-  const initialRoleXD = {
-    role : "admin",
-    userName : "PepeGuapito"
-  }
-  const [roleXD, dispatch] = useReducer(authReducer, initialRoleXD);
 
-  const [logged, dispatchLogged] = useReducer(authReducer, infoContextUser);
+  const InitialMaster = {
+    refresh: false
+  }
+
+  const [infoMaster, dispatchMaster] = useReducer(authReducer,InitialMaster)
 
   return (
     <AuthContext.Provider value ={{
-      infoContextUser,
-      roleXD, dispatch,
-      logged, dispatchLogged
+      infoMaster, dispatchMaster
     }}>
       <AppRouter/>
     </AuthContext.Provider>  

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { ctrlUser } from '../auxs/ControladoresUsuarios';
+import { ctrlUser } from '../../auxs/ControladoresUsuarios';
 
 
 function ModalRegistro() {
@@ -55,7 +55,9 @@ function ModalRegistro() {
             var rawUser=JSON.stringify(newUser)
 
             console.log(rawUser)
-            ctrlUser.postUser("http://localhost:3000/user", rawUser)
+            if(ctrlUser.postUser("http://localhost:3000/user", rawUser)){
+                handleClose
+            }
         }
     
     

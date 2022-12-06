@@ -1,8 +1,10 @@
 import React from "react";
 
-const SectionProfile = () => {
+const SectionProfile = (props) => {
+    const infoUsu = props
+
     return (
-        <section id="hero2" className="d-flex align-items-center">
+        <section id={infoUsu.infoUsu.hero} className="d-flex align-items-center">
             <section className="col-lg-12">
             <div className="container">
             <div className="row">
@@ -13,12 +15,12 @@ const SectionProfile = () => {
                         <div className="col-md-4 border-right">
                         <div className="d-flex flex-column align-items-center text-center p-3 py-1">
                             <img className="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"/>
-                            <span className="font-weight-bold">Edogaru</span>
-                            <span className="text-black-50">edogaru@mail.com.my</span><span> </span>
+                            <span className="font-weight-bold">{infoUsu.infoUsu.userName}</span>
+                            <span className="text-black-50">{infoUsu.infoUsu.email}</span><span> </span>
                         </div>
-                        <h5 className="my-3" id="H5Nombre">Admin</h5>
+                        <h5 className="my-3" id="H5Nombre">{infoUsu.infoUsu.role}</h5>
                         <hr/>
-                        <p className="text-muted mb-4" id="PCate">CodAdmin</p>
+                        <p className="text-muted mb-4" id="PCate">{infoUsu.infoUsu.dni}</p>
                         <p className="text-muted mb-4" id="PMatri"></p>
                         <p className="text-muted mb-4" id="PCodA"></p>
                         </div>
@@ -143,18 +145,14 @@ const SectionProfile = () => {
                     </div>
                     </div>
                 </div>
-                <div className="col-lg-2">
+                {/* <div className="col-lg-2">
                     <div className="card mb-4 hero2card2">
                     <div className="card-body">
                         <div className="d-flex flex-column align-items-center text-center p-3 py-1">
-                        <div className="pic"><img className="rounded-circle" width="100px" alt="" src="src/assets/img/coronavirus-web.jpg"/></div>
-                        <div className="pic"><img className="rounded-circle mt-4" width="100px" alt="" src="src/assets/img/Discapacidad.jpg"/></div>
-                        <div className="pic"><img className="rounded-circle mt-4" width="100px" alt="" src="src/assets/img/Alergia.png"/></div>
-                        <div className="pic"><img className="rounded-circle mt-4" width="100px" alt="" src="src/assets/img/Sangre.jpg"/></div>
                         </div>
                     </div>
                     </div>
-                </div>
+                </div> */}
             </div>
             </div>
             </section>

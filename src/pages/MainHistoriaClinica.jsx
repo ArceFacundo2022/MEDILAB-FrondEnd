@@ -1,6 +1,6 @@
 import Footer from "../components/layout/Footer"
 import Header from "../components/layout/Header"
-import SectionComent from "../components/layout/SectionComent"
+import SectionComent from "../components/Sections/SectionComent"
 import TopBar from "../components/TopBar";
 import { AiFillMedicineBox, AiOutlineUser } from "react-icons/ai";
 

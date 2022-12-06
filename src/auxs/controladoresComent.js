@@ -3,8 +3,6 @@ import { AiFillMedicineBox, AiOutlineUser } from "react-icons/ai";
 export const ctrlComent = {
     postComent : async (url, comentario) =>{
 
-        console.log(localStorage.getItem("Token"))
-
         const json = await fetch(url, {
             headers: {
                 'Content-Type': 'application/json',

@@ -19,8 +19,11 @@ export const ctrlUser = {
 
         const data = await json.json()
         console.log(data.token)
-        localStorage.setItem("Token", data.token)
-        return true
+        if(data.token != undefined){
+            localStorage.setItem("Token", data.token)
+            return (data.id)
+        }
+        return false
     },
 
     postUser : async (url, rawUser) =>{

@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import {ctrlUser} from '../auxs/ControladoresUsuarios.js'
-import { useContext } from 'react';
-import { AuthContext } from './../context/AuthContext';
+import {ctrlUser} from '../../auxs/ControladoresUsuarios.js'
 import { useNavigate } from "react-router-dom"
 
 function ModalInicioSesion() {
-
-const { dispatchLogged } = useContext(AuthContext)
 
 const [show, setShow] = useState(false);
 const handleClose = () => setShow(false);
@@ -49,7 +45,7 @@ return (
                 Cerrar
             </button>
         
-            <button className='d-none d-md-inline appointment-btn scrollto btn btn-primary' onClick={async () => { let login = await ctrlUser.postLogin("http://localhost:3000/login",inicio); if (login){navigate2("/home")}}}>
+            <button className='d-none d-md-inline appointment-btn scrollto btn btn-primary' onClick={async () => { let login = await ctrlUser.postLogin("http://localhost:3000/login",inicio); if (login){navigate2(`/home/${login}`)}}}>
                 Ingresar
             </button>
         </Modal.Footer>
